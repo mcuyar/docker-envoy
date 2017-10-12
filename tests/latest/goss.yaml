@@ -1,0 +1,18 @@
+# Test for files
+file:
+  # Check that environment variables
+  # have been added
+
+  /root/.bashrc:
+    exists: true
+    filetype: file
+    contains:
+    - "if [ -f /opt/envars.sh ]; then source /opt/envars.sh; fi"
+
+  /etc/php7/php-fpm.d/envars.conf:
+    exists: true
+    filetype: file
+    contains:
+    - "env[CACHE_DRIVER] = 'array'"
+    - "env[SESSION_DRIVER] = 'cookie'"
+    - "env[QUEUE_DRIVER] = 'array'"

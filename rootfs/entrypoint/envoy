@@ -1,0 +1,7 @@
+#!/bin/bash
+
+SSH=${SSH:?='SSH var is required. user@host'}
+
+cd /envoy
+echo "Connecting to SSH and Running task..."
+envoy run "${@}"
